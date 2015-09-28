@@ -1,0 +1,82 @@
+The program has multiple .java files in the project namespace that are required for proper execution of the program. 
+
+There are three parts for this program : 
+1. Reading the training file and generating the language model file.
+2. Reading the test file and language model file (generated in the previous step) and tagging the test file.
+3. Using the ref file evaluating the accuracy. 
+
+
+To perform the first step, you need to run Train.java. <this is the main .java file for this step>
+
+Tested on both windows cmd prompt & university linux servers:
+
+Step 1 : > javac  *.java
+Step 2 : > java Train -train <Training_File_Name> -model <Model_File_Name>              
+
+Expected Input  : \HMMPOSTagger > java Train -train hw3_train.txt -model model.txt
+
+Expected output : \HMMPOSTagger > Model file generated in 2357 milli-seconds at D:\WorkSpace\KeplerWS\HMMPOSTagger\model.txt
+
+The program takes 4 arguments -
+First Argument  : just type -train 
+Second Argument : type the name of the training file
+Third Argument  : just type - model 
+Fourth Argument : type the name of the model file
+
+Any number of arguments less or more than 4 will cause the program to exit.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+To perform the second step, you need to run Test.java. <this is the main .java file for this step>
+
+Tested on both windows cmd prompt & university linux servers:
+
+Step 1 : > javac  *.java
+Step 2 : > java Test -test <Test_File_Name> -model <Model_File_Name> -o <Output_File_Name>
+
+Expected Input  : \HMMPOSTagger > java Test -test hw3_test_00.txt -model model.txt -o tagged.txt
+
+Expected output : \HMMPOSTagger > Tagged file generated in 66558 milli-seconds at D:\WorkSpace\KeplerWS\HMMPOSTagger\tagged.txt
+
+The program takes 6 arguments -
+First Argument  : just type -test
+Second Argument : type the name of the test file
+Third Argument  : just type -model
+Fourth Argument : type the name of the model file
+Fifth Argument  : just type -o
+Sixth Argument  : type the name of the output file
+
+Any number of arguments less or more than 6 will cause the program to exit.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+To perform the second step, you need to run Evaluate.java. <this is the main .java file for this step>
+
+Tested on both windows cmd prompt & university linux servers:
+
+Step 1 : > javac  *.java
+Step 2 : > java Evaluate -ref <Refrence_File_Name> -sys <Tagged_File_Name> 
+
+Expected Input  : \HMMPOSTagger > java Evaluate -ref hw3_test_ref_00.txt -sys tagged.txt
+
+Expected output : \HMMPOSTagger > Overall Accuracy       : 0.9547460928870785
+				  Known Words Accuracy   : 0.9652218715792342
+				  UnKnown Words Accuracy : 0.4134342245588723
+
+The program takes 4 arguments -
+First Argument  : just type -ref
+Second Argument : type the name of the reference file
+Third Argument  : just type -sys
+Fourth Argument : type the name of the tagged file
+
+
+Any number of arguments less or more than 4 will cause the program to exit.
+
+
+<pathinfo> - The path is already feed in the program. It takes these files from the Project folder. 
+If you want to test the program on new files other than the onces given to us, please drop these files in the project folder and pass only the name of the file as an argument to the program.
+The model file (model.txt) is also generated in the same Project Folder.
+
+
+
+
